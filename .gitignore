@@ -1,1 +1,52 @@
-node_modules
+# Dependencies
+node_modules/
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Vite/Frontend
+.vite/
+dist-ssr/
+*.local
