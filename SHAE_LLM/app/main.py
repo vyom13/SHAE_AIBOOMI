@@ -21,10 +21,16 @@ app.add_middleware(
 
 def crisis_response() -> str:
     return (
-        "I’m really sorry you’re feeling this way. "
-        "If you might be in immediate danger or thinking about harming yourself or someone else, "
-        "please contact local emergency services right now or reach out to someone you trust. "
-        "If you can, tell me: are you safe right now?"
+        "I'm really sorry you're feeling this way. "
+        "If you're in immediate danger or thinking about harming yourself, "
+        "please reach out for help right now:\n\n"
+        "• Tele MANAS: 14416 or 1800-891-4416 (24/7, free)\n"
+        "• Vandrevala Foundation: 1860-2662-345 or 1800-2333-330 (24/7, free)\n"
+        "• AASRA: 91-22-2754-6669 (24/7)\n"
+        "• iCall: 022-2556-3291 (Mon-Sat, 8am-10pm)\n"
+        "• Snehi: 91-22-2772-6771 (24/7)\n\n"
+        "Or reach out to someone you trust, or contact emergency services (112).\n\n"
+        "Are you safe right now?"
     )
 
 def _dump(x):
@@ -40,6 +46,30 @@ def chat(req: ChatRequest):
     try:
         session_id = req.session_id
         user_message = (req.message or "").strip()
+
+        # 0) Keyword-based crisis detection (fallback before LLM safety check)
+        crisis_keywords = [
+            "kill myself", "end my life", "suicide", "suicidal",
+            "want to die", "better off dead", "plan to die",
+            "harm myself", "hurt myself", "cut myself"
+        ]
+        msg_lower = user_message.lower()
+        if any(keyword in msg_lower for keyword in crisis_keywords):
+            from .schemas import SafetyResult, RiskFlags
+            crisis_safety = SafetyResult(
+                severity="crisis",
+                distress_score=10,
+                risk=RiskFlags(self_harm=True, suicide=True, harm_others=False, abuse=False),
+                reason="Keyword-based crisis detection"
+            )
+            resp = ChatResponse(
+                session_id=session_id,
+                safety=_dump(crisis_safety),
+                orchestration=None,
+                reply=crisis_response(),
+                debug={"route": [], "note": "keyword crisis detection"},
+            )
+            return resp.model_dump()
 
         # 1) Safety layer
         safety: SafetyResult = run_safety(user_message)

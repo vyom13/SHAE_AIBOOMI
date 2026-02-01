@@ -115,7 +115,7 @@ def choose_coach_mode(state: dict) -> str:
     Returns:
     - "GROUND" → when a micro-action / grounding is more useful than conversation
     - "PLAN"   → when the user explicitly asks for a plan
-    - None     → when SHAE should continue the conversation normally
+    - "NONE"   → when SHAE should continue the conversation normally
     """
 
     # 1) Explicit plan request → Coach PLAN
@@ -132,7 +132,7 @@ def choose_coach_mode(state: dict) -> str:
         return "GROUND"
 
     # 4) Otherwise, do NOT invoke Coach
-    return None
+    return "NONE"
 
 
 def coaching_agent(mode: str, user_text: str, recent_turns: List[str]) -> str:
