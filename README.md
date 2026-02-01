@@ -1,6 +1,6 @@
 # SHAE - AI Mental Health Companion!
 
-![](https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/SHEA_onboarding.gif)
+![](https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/SHEA_onboarding.gif) ![](https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/square_breathing.gif) ![](https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/burn_journal.gif)
 
 
 SHAE is a privacy-focused mental health chatbot with sophisticated multi-agent orchestration, designed with cultural sensitivity for Indian contexts.
