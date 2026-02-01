@@ -1,4 +1,4 @@
-# SHAE - AI Mental Health Companion!
+# SHAE - AI Mental Health Resiliance App!
 <img 
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/SHEA_onboarding.gif" 
   width="300"
