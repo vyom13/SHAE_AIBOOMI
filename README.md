@@ -3,10 +3,12 @@
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/SHEA_onboarding.gif" 
   width="500"
 />
+ <\n>
  <img 
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/square_breathing.gif" 
   width="500"
 />
+<\n>
  <img 
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/burn_journal.gif" 
   width="500"
