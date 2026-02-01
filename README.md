@@ -1,15 +1,15 @@
 # SHAE - AI Mental Health Resiliance App!
 <img 
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/SHEA_onboarding.gif" 
-  width="300"
+  width="500"
 />
  <img 
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/square_breathing.gif" 
-  width="300"
+  width="500"
 />
  <img 
   src="https://github.com/vyom13/SHAE_AIBOOMI/blob/main/GIF/burn_journal.gif" 
-  width="300"
+  width="500"
 />
 
 
